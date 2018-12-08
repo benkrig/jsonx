@@ -1,0 +1,37 @@
+@mixin attr-vw($attr, $attr-count: 100, $attr-steps: 1, $unit: 'vw') {
+  $attr-list: null;
+  @for $i from 1 through $attr-count {
+    $attr-value: $attr-steps * $i;
+
+    .#{$attr}#{$attr-value} {
+      width: #{$attr-value}#{$unit} !important;
+    }
+
+    $attr-list: append($attr-list, unquote(".#{$attr}-#{$attr-value}"), comma);
+  }
+
+  #{$attr-list} {
+    //append style to all classes
+  }
+}
+
+@include attr-vw('vw-');
+
+@mixin attr-w($attr, $attr-count: 100, $attr-steps: 1, $unit: '%') {
+  $attr-list: null;
+  @for $i from 1 through $attr-count {
+    $attr-value: $attr-steps * $i;
+
+    .#{$attr}#{$attr-value} {
+      width: #{$attr-value}#{$unit} !important;
+    }
+
+    $attr-list: append($attr-list, unquote(".#{$attr}-#{$attr-value}"), comma);
+  }
+
+  #{$attr-list} {
+    //append style to all classes
+  }
+}
+
+@include attr-w('w-');

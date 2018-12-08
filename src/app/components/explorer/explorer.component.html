@@ -1,0 +1,30 @@
+<mat-card class="vh-90">
+
+  <mat-toolbar class="mat-accent text-white">
+    <button mat-raised-button class="mx-2" color="primary" (click)="clearJson()">
+      <mat-icon>refresh</mat-icon>Clear
+    </button>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+
+  <mat-card-content>
+
+    <mat-grid-list cols="2" class="pad-20">
+
+      <mat-grid-tile>
+        <div class="w-100 h-100 pad-20">
+          <ngx-monaco-editor class="editor-container" [options]="options" [(ngModel)]="jsonEditor"></ngx-monaco-editor>
+        </div>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <ngx-json-viewer class="h-100 w-100" [json]="json" [expanded]="false"></ngx-json-viewer>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+
+  </mat-card-content>
+
+</mat-card>
+
+

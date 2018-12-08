@@ -1,0 +1,19 @@
+@mixin attr-mx($attr, $attr-count: 256, $attr-steps: 1, $unit: 'px') {
+  $attr-list: null;
+  @for $i from 1 through $attr-count {
+    $attr-value: $attr-steps * $i;
+
+    .#{$attr}#{$attr-value} {
+      margin-left: #{$attr-value}#{$unit} !important;
+    }
+
+    $attr-list: append($attr-list, unquote(".#{$attr}-#{$attr-value}"), comma);
+  }
+
+  #{$attr-list} {
+    //append style to all classes
+  }
+}
+
+
+@include attr-p('mx-');

@@ -1,0 +1,17 @@
+{
+  "universal": {
+    "project": "jsonx",
+    "skipInstall": false,
+    "directory": "."
+  },
+  "serverless": {
+    "provider": "aws",
+    "project": "jsonx",
+    "skipInstall": false,
+    "directory": ".",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}

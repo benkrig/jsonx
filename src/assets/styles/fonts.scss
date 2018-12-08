@@ -1,0 +1,19 @@
+@mixin attr-x($attr, $attr-count: 128, $attr-steps: 1, $unit: 'px') {
+  $attr-list: null;
+  @for $i from 1 through $attr-count {
+    $attr-value: $attr-steps * $i;
+
+    .#{$attr}#{$attr-value} {
+      font-size: #{$attr-value}#{$unit};
+    }
+
+    $attr-list: append($attr-list, unquote(".#{$attr}-#{$attr-value}"), comma);
+  }
+
+  #{$attr-list} {
+    //append style to all classes
+  }
+}
+
+
+@include attr-x('fs-');
