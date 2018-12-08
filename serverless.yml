@@ -9,8 +9,8 @@ provider:
   runtime: nodejs6.10
   memorySize: 192
   timeout: 10
-  stage: production
-  region: eu-central-1
+  stage: dit
+  region: us-east-1
 
 package:
   exclude:
